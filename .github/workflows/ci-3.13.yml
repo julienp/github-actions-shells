@@ -31,7 +31,7 @@ jobs:
         source venv/*/activate
         echo $VIRTUAL_ENV
         echo $PATH
-        grep MINGW venv/Scripts/activate
+        grep MINGW venv/Scripts/activate || true
     - name: Patch activate script
       shell: bash
       run: |
