@@ -1,0 +1,33 @@
+name: Windows Bash
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.13'
+    - name: Info
+      shell: bash
+      run: |
+        echo $OSTYPE
+        uname
+        echo $PATH
+    - name: Test
+      shell: bash
+      run: |
+        python -m venv venv
+        source venv/*/activate
+        echo $VIRTUAL_ENV
+        echo $PATH
