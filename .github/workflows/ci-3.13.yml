@@ -34,9 +34,9 @@ jobs:
     - name: Patch activate script
       shell: bash
       run: |
-        grep MINGW venv/*/activate
-        sed -i 's/MSYS\*/MSYS\*\|MINGW\*/' venv/*/activate
-        grep MINGW venv/*/activate
+        grep MINGW venv/Scripts/activate
+        sed -i 's/MSYS\*/MSYS\*\|MINGW\*/' venv/Scripts/activate
+        grep MINGW venv/Scripts/activate
         echo $PATH
         source venv/*/activate
         echo $VIRTUAL_ENV
